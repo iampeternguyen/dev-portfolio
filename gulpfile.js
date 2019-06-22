@@ -9,7 +9,7 @@ const gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	imagemin = require('gulp-imagemin'),
 	changed = require('gulp-changed'),
-	uglify = require('gulp-uglify'),
+	uglify = require('gulp-uglify-es').default,
 	lineec = require('gulp-line-ending-corrector');
 
 const root = `./${themename}/`,
@@ -45,7 +45,7 @@ function concatCSS() {
 		.pipe(gulp.dest(scss));
 }
 
-const jsSRC = `${js}*`,
+const jsSRC = `${js}**`,
 	jsDest = `${root}/js/`;
 
 function javascript() {
