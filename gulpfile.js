@@ -14,7 +14,8 @@ const gulp = require('gulp'),
 
 const root = `./${themename}/`,
 	scss = `${root}sass/`,
-	js = `${root}js/custom/`;
+	js = `${root}js/custom/`,
+	cssDest = `${root}css/`;
 
 const phpWatchFiles = `${root}**/*.php`,
 	stylesWatchFiles = `${scss}**/*.scss`;
@@ -42,7 +43,7 @@ function concatCSS() {
 		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('./maps/'))
 		.pipe(lineec())
-		.pipe(gulp.dest(scss));
+		.pipe(gulp.dest(cssDest));
 }
 
 const jsSRC = `${js}**`,
@@ -82,7 +83,7 @@ function watch() {
 	gulp.watch(stylesWatchFiles, gulp.series([css, concatCSS]));
 	gulp.watch(jsSRC, javascript);
 	gulp.watch(imageSRC, imgmin);
-	gulp.watch([phpWatchFiles, jsDest + 'scripts-bundled.js', scss + 'style.min.css', root + 'style.css']).on(
+	gulp.watch([phpWatchFiles, jsDest + 'scripts-bundled.js', cssDest + 'style.min.css', root + 'style.css']).on(
 		'change',
 		reload
 	);

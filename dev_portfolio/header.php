@@ -20,9 +20,12 @@
 
 <body <?php body_class(); ?>>
   <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dev_portfolio'); ?></a>
+    <?php if (!is_front_page()) : ?>
 
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dev_portfolio'); ?></a>
+    <?php endif; ?>
     <header id="masthead" class="site-header">
+      <?php if (!is_front_page()) : ?>
       <div class="site-branding">
         <?php
             the_custom_logo();
@@ -54,6 +57,8 @@
             ));
             ?>
       </nav><!-- #site-navigation -->
+
+      <?php endif; ?>
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
