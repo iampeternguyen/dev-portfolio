@@ -76,7 +76,7 @@ function imgmin() {
 function watch() {
 	browserSync.init({
 		open: 'external',
-		proxy: 'http://localhost:32833/',
+		proxy: 'http://localhost:32814/',
 		port: 8080,
 	});
 

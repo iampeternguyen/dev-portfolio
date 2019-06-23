@@ -8,21 +8,22 @@
 
 html {
 	box-sizing: border-box;
-	font-size: 62.5%;
+	font-size: 62.5%; // 1 rem = 1 px;
+	background-color: $dark;
 }
 
 body {
-	// font-family: $font-primary;
 	// color: $color-grey-dark-2;
 	font-weight: 300;
 	line-height: 1.6;
+	color: $light;
 	font-size: 1.6rem;
 }
 
 .container {
-	max-width: 75rem;
+	max-width: 120rem;
+	width: 80%;
 	margin: 0 auto;
 	min-height: 100vh;
-	background-color: orangered;
 	padding: 3rem 5rem;
 }

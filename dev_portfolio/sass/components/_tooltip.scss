@@ -1,0 +1,53 @@
+$borderWidth: 1rem;
+
+.tooltip {
+	position: relative;
+	background-color: $light;
+	color: $dark;
+	padding: 1rem 2rem;
+	border-radius: 0.3rem;
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 0;
+		height: 0;
+		border: $borderWidth solid transparent;
+	}
+
+	&.down {
+		&::after {
+			top: 100%;
+			left: 50%;
+			border-top: $borderWidth solid $light;
+			margin-left: -$borderWidth;
+		}
+	}
+
+	&.up {
+		&::after {
+			top: calc(-2 * #{$borderWidth});
+			left: 50%;
+			border-bottom: $borderWidth solid $light;
+			margin-left: -$borderWidth;
+		}
+	}
+
+	&.left {
+		&::after {
+			top: 50%;
+			left: calc(-2 * #{$borderWidth});
+			border-right: $borderWidth solid $light;
+			margin-top: -$borderWidth;
+		}
+	}
+
+	&.right {
+		&::after {
+			top: 50%;
+			left: 100%;
+			border-left: $borderWidth solid $light;
+			margin-top: -$borderWidth;
+		}
+	}
+}

@@ -1,70 +1,147 @@
 .splashScreen {
 	position: fixed;
 	z-index: 1000;
-	background-color: white;
+	background-color: $light;
 	height: 100vh;
 	width: 100vw;
 	top: 0;
 	left: 0;
+
+	&__background {
+		@include absoluteCenter;
+		background: linear-gradient(270deg, $red, darken($yellow, 25%), $blue, $green);
+		background-size: 600% 600%;
+		border-radius: 50%;
+		animation: bgAppear 0.5s ease forwards, bgGradient 20s ease infinite;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			@include absoluteCenter;
+
+			height: 20vw;
+			width: 20vw;
+			min-width: 20rem;
+			min-height: 20rem;
+			border-radius: 50%;
+			content: '';
+			background-color: transparent;
+			border: 0.2rem solid white;
+			z-index: -1;
+			transition: all 0.5s;
+		}
+
+		&.hover::before {
+			animation: onHover 0.5s ease-out infinite;
+		}
+	}
+
+	&__content {
+		@include absoluteCenter;
+		height: 20vw;
+		width: 20vw;
+		min-width: 20rem;
+		min-height: 20rem;
+		border-radius: 50%;
+		background-color: $light;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: all 0.3s;
+		box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+
+		&.onClose {
+			height: 100vh;
+			width: 100vw;
+			border-radius: 0;
+			background-color: $dark;
+		}
+	}
+
+	&__image {
+		width: 75%;
+		min-width: 15rem;
+		min-height: 15rem;
+		transition: all 0.3s;
+		position: relative;
+		transform-origin: center center;
+		animation: chibiAppear 1s 0.3s backwards;
+
+		&.onClose {
+			animation: chibiDisappear 1s 0.1s backwards;
+		}
+	}
+
+	&__text {
+		z-index: 1;
+		position: relative;
+		top: 30vh;
+		display: grid;
+		width: 30vw;
+
+		grid-template-columns: repeat(3, 1fr);
+		justify-content: space-between;
+		justify-items: center;
+		color: $light;
+		font-family: $fontHeading;
+		text-transform: lowercase;
+		transition: all 0.2s;
+
+		&.onClose {
+			animation: disappear 0.1s forwards;
+		}
+	}
+
+	&__tooltip {
+		position: absolute;
+		top: 15%;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: appear 0.3s 3s backwards, moveUpAndDown 0.5s 3s infinite;
+		transition: all 0.3s;
+		&.onClose {
+			opacity: 0;
+		}
+	}
 }
-.splashScreen__background {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: linear-gradient(270deg, #7b83ff, #8fba71, #d5714e, #f6db41);
-	background-size: 800% 800%;
-	border-radius: 50%;
-	animation: bgAppear 0.5s ease forwards, bgGradient 30s ease infinite;
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
 }
-.splashScreen__content,
-.splashScreen__content::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	height: 20vw;
-	width: 20vw;
-	min-width: 20rem;
-	min-height: 20rem;
-	border-radius: 50%;
+
+@keyframes disappear {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
 }
-.splashScreen__content {
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	transition: all 0.3s;
-	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-}
-.splashScreen__content.animate {
-	height: 100vh;
-	width: 100vw;
-	border-radius: 0;
-}
-.splashScreen__content::before {
-	content: '';
-	background-color: transparent;
-	border: 0.2rem solid white;
-	z-index: -1;
-	transition: all 0.5s;
-}
-.splashScreen__content:hover::before {
-	animation: onHover 0.5s ease-out infinite;
-}
-.splashScreen__image {
-	width: 90%;
-	height: auto;
-	max-width: 30rem;
-	max-height: 30rem;
-	transition: all 0.3s;
-	position: relative;
-	transform-origin: center center;
-	animation: chibiAppear 1s 0.3s backwards;
-}
-.splashScreen__image.animate {
-	animation: chibiDisappear 1s 0.1s backwards;
+
+@keyframes moveUpAndDown {
+	0% {
+		transform: translate(-50%, 0);
+	}
+
+	50% {
+		transform: translate(-50%, -0.5rem);
+	}
+	100% {
+		transform: translate(-50%, 0);
+	}
 }
 
 @keyframes bgGradient {
@@ -98,7 +175,10 @@
 	}
 	50% {
 		transform: translate(-50%, -50%) scale(1.3);
-		opacity: 1;
+		opacity: 0.3;
+	}
+	70% {
+		opacity: 0.2;
 	}
 	100% {
 		transform: translate(-50%, -50%) scale(1.5);
@@ -129,29 +209,4 @@
 		transform: rotate(360deg);
 		opacity: 0;
 	}
-}
-
-*,
-*::after,
-*::before {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: inherit;
-}
-
-html {
-	font-size: 62.5%;
-}
-
-body {
-	box-sizing: border-box;
-}
-
-.button:link,
-.button:visited {
-	background-color: white;
-	text-decoration: none;
-	color: black;
-	padding: 0.5rem 1rem;
-	border-radius: 1rem;
 }
