@@ -1,15 +1,9 @@
-const splashScreenContent = document.getElementsByClassName('splashScreen__content')[0];
-const splashScreenBackground = document.getElementsByClassName('splashScreen__background')[0];
-
-splashScreenContent.addEventListener('mouseover', () => {
-	splashScreenBackground.classList.add('hover');
-});
-
-splashScreenContent.addEventListener('mouseout', () => {
-	splashScreenBackground.classList.remove('hover');
-});
+const splashScreenContent = document.getElementsByClassName('splashScreen__circle')[0];
 
 splashScreenContent.addEventListener('click', () => {
+	const splashScreen = document.getElementById('splashScreen');
+	const splashScreenBackground = document.getElementsByClassName('splashScreen__background')[0];
+
 	const image = document.getElementsByClassName('splashScreen__image')[0];
 	const imageStyles = getComputedStyle(image);
 
@@ -17,10 +11,11 @@ splashScreenContent.addEventListener('click', () => {
 	image.style.maxWidth = imageStyles.width;
 
 	const elements = Array.from(splashScreenBackground.children);
-	elements.push(image);
-	elements.forEach(child => child.classList.add('onClose'));
+	elements.push(image, splashScreenBackground, splashScreen);
+	console.log(elements);
+	elements.forEach(element => element.classList.add('onClose'));
 
 	setTimeout(() => {
-		document.getElementById('splashScreen').style.display = 'none';
-	}, 700);
+		splashScreen.style.display = 'none';
+	}, 1000);
 });

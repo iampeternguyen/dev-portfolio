@@ -131,6 +131,7 @@ function dev_portfolio_scripts()
 
     wp_enqueue_style('dev_portfolio-style', get_theme_file_uri('/css/style.min.css'), null, microtime());
     wp_enqueue_style('raleway_font', '//fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+    wp_enqueue_style('roboto_font', '//fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
 
     wp_enqueue_script('dev_portfolio-js', get_theme_file_uri('/js/scripts-bundled.js'), null, microtime(), true);
 }

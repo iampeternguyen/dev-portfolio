@@ -2,7 +2,8 @@
 <section class="splashScreen" id="splashScreen">
   <div class="splashScreen__background">
     <div class="splashScreen__tooltip  tooltip down small bottom margin">Click to meet me</div>
-    <div class="splashScreen__content">
+
+    <div class="splashScreen__circle">
       <img src="<?php echo get_template_directory_uri().'/images/peter-head.svg'; ?>" alt="Peter Chibi"
         class="splashScreen__image" />
     </div>
