@@ -46,7 +46,7 @@ function concatCSS() {
 		.pipe(gulp.dest(cssDest));
 }
 
-const jsSRC = `${js}**`,
+const jsSRC = `${js}**/*.js`,
 	jsDest = `${root}/js/`;
 
 function javascript() {
@@ -76,7 +76,7 @@ function imgmin() {
 function watch() {
 	browserSync.init({
 		open: 'external',
-		proxy: 'http://localhost:32814/',
+		proxy: 'http://localhost:8000/',
 		port: 8080,
 	});
 
