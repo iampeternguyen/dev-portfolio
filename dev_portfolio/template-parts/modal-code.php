@@ -17,9 +17,9 @@
     <div class="codeModal__code">
       <nav class="codeModal__codeNav">
         <ul>
-          <li>html</li>
-          <li>css</li>
-          <li>js</li>
+          <li class="codeModal__htmlLink">html</li>
+          <li class="codeModal__cssLink">css</li>
+          <li class="codeModal__jsLink">js</li>
         </ul>
       </nav>
       <div class="codeModal__codeSnippets">

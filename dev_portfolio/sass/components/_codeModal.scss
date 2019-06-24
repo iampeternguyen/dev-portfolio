@@ -24,20 +24,19 @@
 	}
 
 	&__container {
-		height: 90%;
-		width: 80%;
-		padding: 7rem 10rem;
+		height: 90vh;
+		width: 80vw;
+		padding: 4rem 6rem;
 		background-color: $light;
 		color: $dark;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-column-gap: 2rem;
+		grid-template-columns: 30% 65%;
+		grid-column-gap: 5%;
 	}
 
 	&__code {
-		background-color: $dark;
 		color: $light;
-		overflow: scroll;
+		height: 100%;
 
 		&Nav {
 			background-color: $light;
@@ -50,13 +49,19 @@
 				padding: 0.5rem 1rem;
 				width: 10rem;
 
-				background-color: $green;
+				background-color: $darkGrey;
 				border: 1px solid $light;
 				border-bottom: 1px solid transparent;
 				border-top-right-radius: 1rem;
 				border-top-left-radius: 1rem;
 
 				text-align: center;
+
+				transition: all $fast;
+
+				&.active {
+					background-color: $blue;
+				}
 				&:last-child {
 					padding-right: 2rem;
 				}
@@ -64,7 +69,12 @@
 		}
 
 		&Snippets {
-			padding: 1.5rem;
+			.gist-data {
+				max-height: 60vh; // Any height
+				max-width: 100%;
+				width: 100%;
+				overflow-y: visible;
+			}
 		}
 	}
 
