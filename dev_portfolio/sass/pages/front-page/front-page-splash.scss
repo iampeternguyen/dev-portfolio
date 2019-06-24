@@ -8,7 +8,7 @@
 	left: 0;
 	transition: opacity $medium $medium;
 
-	&.onClose {
+	&.close {
 		opacity: 0;
 	}
 
@@ -33,7 +33,7 @@
 			border-radius: 50%;
 		}
 
-		&.onClose::before {
+		&.close::before {
 			height: 100vh;
 			width: 100vw;
 			border-radius: 0;
@@ -88,7 +88,7 @@
 		transform-origin: center center;
 		animation: chibiAppear $verySlow $fast backwards;
 
-		&.onClose {
+		&.close {
 			animation: chibiDisappear $verySlow $fast backwards;
 		}
 	}
@@ -109,7 +109,7 @@
 			}
 		}
 
-		&.onClose {
+		&.close {
 			animation: disappear $fast forwards;
 		}
 	}
@@ -118,32 +118,9 @@
 		animation: appear $fast 2s backwards, moveUpAndDown $medium 2s infinite;
 		transition: all $fast;
 		width: 60%;
-		&.onClose {
+		&.close {
 			opacity: 0;
 		}
-	}
-}
-
-@keyframes appear {
-	0% {
-		opacity: 0;
-		visibility: hidden;
-	}
-	100% {
-		opacity: 1;
-		visibility: visible;
-	}
-}
-
-@keyframes disappear {
-	0% {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	100% {
-		opacity: 0;
-		visibility: hidden;
 	}
 }
 

@@ -13,7 +13,7 @@
 
 		const elements = Array.from(splashScreenBackground.children);
 		elements.push(image, splashScreenBackground, splashScreen);
-		elements.forEach(element => element.classList.add('onClose'));
+		elements.forEach(element => element.classList.add('close'));
 
 		setTimeout(() => {
 			splashScreen.style.display = 'none';

@@ -23,5 +23,6 @@ get_template_part('template-parts/frontpage', 'splash');
   </main><!-- #main -->
 </div><!-- #primary -->
 
+<?php get_template_part('template-parts/modal', 'code'); ?>
 <?php
 get_footer();
