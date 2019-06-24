@@ -23,21 +23,9 @@
         </ul>
       </nav>
       <div class="codeModal__codeSnippets">
-        <div class="codeModal__codeSnippetsScss">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex enim
-          placeat iure? Odit
-          obcaecati incidunt modi nostrum similique enim aliquid architecto, perferendis quis adipisci vero nobis iste
-          distinctio dicta illo.</div>
-        <div class="codeModal__codeSnippetsJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni
-          laboriosam,
-          harum
-          atque laborum reprehenderit, reiciendis deserunt iste nisi molestias maiores culpa quam ea optio alias maxime
-          expedita error debitis officiis? Numquam nemo cupiditate officiis laboriosam nam, maiores a quis?</div>
-        <div class="codeModal__codeSnippetsHtml">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni,
-          quod
-          voluptates
-          enim ducimus illo nostrum rem sunt corporis, dolorem quis quia aperiam repellat quaerat maiores dolores ut
-          beatae
-          asperiores.</div>
+        <div class="codeModal__codeSnippetsCss"></div>
+        <div class="codeModal__codeSnippetsJs"></div>
+        <div class="codeModal__codeSnippetsHtml"> </div>
       </div>
 
     </div>

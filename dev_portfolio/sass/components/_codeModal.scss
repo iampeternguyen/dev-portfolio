@@ -37,6 +37,7 @@
 	&__code {
 		background-color: $dark;
 		color: $light;
+		overflow: scroll;
 
 		&Nav {
 			background-color: $light;
