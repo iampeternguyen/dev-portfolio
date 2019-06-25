@@ -9,6 +9,8 @@ class CodeModal {
 		this.data = {};
 
 		this.container = document.getElementsByClassName('codeModal__container')[0];
+		this.closeButton = document.getElementsByClassName('codeModal__closeButton')[0];
+
 		this.jsCode = document.getElementsByClassName('codeModal__codeSnippetsJs')[0];
 		this.cssCode = document.getElementsByClassName('codeModal__codeSnippetsCss')[0];
 		this.htmlCode = document.getElementsByClassName('codeModal__codeSnippetsHtml')[0];
@@ -18,6 +20,10 @@ class CodeModal {
 	}
 	setUpEventListners() {
 		this.modal.addEventListener('click', e => {
+			this.hide();
+		});
+
+		this.closeButton.addEventListener('click', e => {
 			this.hide();
 		});
 
