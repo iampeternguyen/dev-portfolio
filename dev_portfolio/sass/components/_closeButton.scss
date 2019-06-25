@@ -1,0 +1,22 @@
+.closeButton,
+.closeButton::after {
+	position: absolute;
+	height: 0.5rem;
+	width: 2rem;
+	background-color: $dark;
+}
+
+.closeButton {
+	transform: rotate(45deg);
+	transition: all $fast;
+
+	&:hover,
+	&:hover::after {
+		background-color: $red;
+	}
+}
+
+.closeButton::after {
+	content: '';
+	transform: rotate(-90deg);
+}

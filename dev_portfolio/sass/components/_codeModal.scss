@@ -23,27 +23,9 @@
 		animation: disappear $medium forwards;
 	}
 
-	&__closeButton,
-	&__closeButton::after {
-		position: absolute;
-		height: 0.5rem;
-		width: 2rem;
-		background-color: $dark;
-	}
-
 	&__closeButton {
 		top: 2rem;
 		right: 2rem;
-		transform: rotate(45deg);
-		&:hover,
-		&:hover::after {
-			background-color: $red;
-		}
-	}
-
-	&__closeButton::after {
-		content: '';
-		transform: rotate(-90deg);
 	}
 
 	&__container {

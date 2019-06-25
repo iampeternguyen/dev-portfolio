@@ -1,6 +1,6 @@
 <div class="codeModal">
   <div class="codeModal__container">
-    <div class="codeModal__closeButton"></div>
+    <div class="codeModal__closeButton closeButton"></div>
     <div class="codeModal__description">
       <h3 class="codeModal__title">CSS Philosophy</h3>
       <div class="codeModal__description">
