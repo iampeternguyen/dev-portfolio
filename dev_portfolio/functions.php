@@ -133,6 +133,7 @@ function dev_portfolio_scripts()
     wp_enqueue_style('roboto_font', '//fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
     wp_enqueue_script('axios', 'https://unpkg.com/axios/dist/axios.min.js');
     wp_enqueue_script('postscribe', 'https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js');
+    wp_enqueue_script('vuejs', 'https://cdn.jsdelivr.net/npm/vue');
 
     wp_enqueue_script('dev_portfolio-js', get_theme_file_uri('/js/scripts-bundled.js'), null, microtime(), true);
 }

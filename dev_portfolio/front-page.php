@@ -10,7 +10,7 @@
  * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 get_header();
-get_template_part('template-parts/frontpage', 'splash');
+// get_template_part('template-parts/frontpage', 'splash');
 
 ?>
 
@@ -18,6 +18,7 @@ get_template_part('template-parts/frontpage', 'splash');
   <main id="main" class="site-main">
 
     <?php get_template_part('template-parts/frontpage', 'intro'); ?>
+    <?php get_template_part('template-parts/frontpage', 'gallery'); ?>
 
 
   </main><!-- #main -->

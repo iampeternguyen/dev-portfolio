@@ -1,0 +1,94 @@
+.projectGallery {
+	&__projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		grid-column-gap: 2.5rem;
+		grid-row-gap: 3rem;
+	}
+	&__project {
+		position: relative;
+		box-shadow: 0 2rem 2rem rgba($dark, 0.2);
+		padding: 1rem 1rem;
+		min-height: 45rem;
+
+		&Back {
+			position: absolute;
+			background-color: $red;
+			color: $light;
+			padding: 1rem 1rem;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 0%;
+
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+
+			&.show {
+				top: 0;
+				height: 100%;
+			}
+		}
+
+		&HighlightsList {
+			padding-left: 2rem;
+			margin-bottom: auto;
+		}
+
+		&Links {
+			svg {
+				fill: $light;
+				height: 5rem;
+				width: 5rem;
+
+				&:hover {
+					fill: $blue;
+				}
+			}
+		}
+		&TitleContainer {
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&Title {
+			color: $green;
+			font-size: 2rem;
+		}
+
+		&MenuButton {
+			position: relative;
+			justify-self: end;
+			background-color: $green;
+			border-radius: 50%;
+			height: 0.4rem;
+			width: 0.4rem;
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: '';
+				background-color: $green;
+				border-radius: 50%;
+				height: 0.4rem;
+				width: 0.4rem;
+			}
+
+			&::before {
+				transform: translateY(-0.5rem);
+			}
+			&::after {
+				transform: translateY(0.5rem);
+			}
+		}
+
+		&Image {
+			display: block;
+			max-width: 100%;
+			border-radius: 0.5rem;
+		}
+	}
+}
