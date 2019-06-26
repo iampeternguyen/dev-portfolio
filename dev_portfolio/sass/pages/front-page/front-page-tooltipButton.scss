@@ -1,0 +1,14 @@
+.tooltipButton {
+	position: fixed;
+	top: 5%;
+	right: 7%;
+
+	z-index: $zindexOverlay;
+	fill: $light;
+	cursor: pointer;
+
+	svg {
+		height: 4rem;
+		width: 4rem;
+	}
+}

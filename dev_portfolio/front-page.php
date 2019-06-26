@@ -16,7 +16,7 @@ get_template_part('template-parts/frontpage', 'splash');
 
 <div id="primary" class="content-area container">
   <main id="main" class="site-main">
-
+    <?php get_template_part('template-parts/frontpage', 'tooltipButton'); ?>
     <?php get_template_part('template-parts/frontpage', 'intro'); ?>
     <?php get_template_part('template-parts/frontpage', 'gallery'); ?>
     <?php get_template_part('template-parts/frontpage', 'contact'); ?>

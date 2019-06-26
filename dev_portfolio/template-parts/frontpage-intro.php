@@ -1,6 +1,5 @@
 <div class="intro">
   <h1 class="intro__header">Hi. I am Peter.</h1>
-  <div class="test" onClick="codeModal.hideTooltips()">testing</div>
   <p class="intro__paragraph medium margin bottom">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
     dolores inventore
     voluptates magnam architecto recusandae. Totam reprehenderit magnam repellat ipsam quam dolore quisquam quod esse
