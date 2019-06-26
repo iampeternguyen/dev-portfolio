@@ -9,5 +9,5 @@
     eligendi laboriosam inventore ullam iste voluptatem numquam asperiores blanditiis excepturi et, hic vitae? Ea quis
     voluptate sapiente facere ipsa dolorem placeat consequatur vel iste blanditiis unde architecto, asperiores
     veritatis? Dignissimos, fuga sit nobis soluta enim provident distinctio non?</p>
-  <div class="intro__tooltip tooltip left blue">Dig Deeper</div>
+  <div class="intro__tooltip tooltip left blue" onClick="codeModal.show(1807)">Dig Deeper</div>
 </div>

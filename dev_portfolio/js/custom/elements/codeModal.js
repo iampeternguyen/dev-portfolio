@@ -7,6 +7,7 @@ class CodeModal {
 	setUpProperties() {
 		this.modal = document.getElementsByClassName('codeModal')[0];
 		this.data = {};
+		this.id = null;
 
 		this.container = document.getElementsByClassName('codeModal__container')[0];
 		this.closeButton = document.getElementsByClassName('codeModal__closeButton')[0];
@@ -42,22 +43,24 @@ class CodeModal {
 		});
 	}
 
-	updateDisplay(data) {
-		if (this.data.html_gist && this.data.html_gist == data.html_gist) {
-			return console.log('same');
-		}
-		this.data = data;
+	async updateDisplay() {
+		const response = await axios.get(`http://localhost:8000/wp-json/wp/v2/code_explainer/${this.id}`);
+		const data = response.data;
 
 		postscribe(this.htmlCode, data.html_gist);
 		postscribe(this.cssCode, data.css_gist);
 		postscribe(this.jsCode, data.js_gist);
-		this.showHtml();
 	}
 
-	show() {
+	show(id) {
+		if (this.id !== id) {
+			this.id = id;
+			this.updateDisplay();
+		}
 		this.modal.classList.remove('close');
 		this.modal.style.display = 'flex';
 		this.modal.classList.add('open');
+		this.showHtml();
 	}
 
 	hide() {

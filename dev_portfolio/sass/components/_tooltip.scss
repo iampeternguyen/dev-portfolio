@@ -1,5 +1,4 @@
 $borderWidth: 1rem;
-
 .tooltip {
 	position: relative;
 	background-color: $light;
@@ -8,7 +7,6 @@ $borderWidth: 1rem;
 	border-radius: 0.3rem;
 	text-align: center;
 	text-transform: lowercase;
-
 	&::after {
 		position: absolute;
 		content: '';
@@ -50,6 +48,64 @@ $borderWidth: 1rem;
 			left: 100%;
 			border-left: $borderWidth solid $light;
 			margin-top: -$borderWidth;
+		}
+	}
+
+	&.red {
+		background-color: $red;
+		color: $light;
+
+		&.left {
+			&::after {
+				border-right: $borderWidth solid $red;
+			}
+		}
+
+		&.right {
+			&::after {
+				border-left: $borderWidth solid $red;
+			}
+		}
+
+		&.up {
+			&::after {
+				border-bottom: $borderWidth solid $red;
+			}
+		}
+
+		&.down {
+			&::after {
+				border-top: $borderWidth solid $red;
+			}
+		}
+	}
+
+	&.blue {
+		background-color: $blue;
+		color: $light;
+
+		&.left {
+			&::after {
+				border-right: $borderWidth solid $blue;
+			}
+		}
+
+		&.right {
+			&::after {
+				border-left: $borderWidth solid $blue;
+			}
+		}
+
+		&.up {
+			&::after {
+				border-bottom: $borderWidth solid $blue;
+			}
+		}
+
+		&.down {
+			&::after {
+				border-top: $borderWidth solid $blue;
+			}
 		}
 	}
 }

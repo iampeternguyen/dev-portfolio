@@ -1,0 +1,41 @@
+.contact {
+	height: 100vh;
+	background-color: $dark;
+	color: $light;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__message {
+		display: flex;
+		align-items: center;
+	}
+
+	&__email {
+		margin-left: 0.3rem;
+		display: inline-block;
+		padding: 0.3rem 1rem;
+		background-color: $light;
+		border-radius: 2rem;
+		transition: all $fast;
+
+		&:hover {
+			background-color: $red;
+			transform: translateY(-0.3rem);
+		}
+
+		&:active {
+			transform: translateY(0rem);
+		}
+		a:link,
+		a:visited {
+			text-decoration: none;
+			color: $dark;
+		}
+
+		a:hover {
+			color: $light;
+		}
+	}
+}

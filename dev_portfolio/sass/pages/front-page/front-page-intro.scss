@@ -17,13 +17,7 @@
 		position: absolute;
 		top: 50%;
 		left: 100%;
-		opacity: 0;
-		visibility: hidden;
+		opacity: 1;
 		transition: all $medium;
-
-		&.active {
-			opacity: 1;
-			visibility: visible;
-		}
 	}
 }

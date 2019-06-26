@@ -19,6 +19,8 @@ get_template_part('template-parts/frontpage', 'splash');
 
     <?php get_template_part('template-parts/frontpage', 'intro'); ?>
     <?php get_template_part('template-parts/frontpage', 'gallery'); ?>
+    <?php get_template_part('template-parts/frontpage', 'contact'); ?>
+
 
 
   </main><!-- #main -->
