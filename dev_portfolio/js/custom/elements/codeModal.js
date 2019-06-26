@@ -9,6 +9,9 @@ class CodeModal {
 		this.data = {};
 		this.id = null;
 
+		this.tooltips = Array.from(document.getElementsByClassName('code__tooltip'));
+		console.log(this.tooltips);
+
 		this.container = document.getElementsByClassName('codeModal__container')[0];
 		this.closeButton = document.getElementsByClassName('codeModal__closeButton')[0];
 
@@ -42,7 +45,13 @@ class CodeModal {
 			this.showJs();
 		});
 	}
+	displayTooltips() {
+		this.tooltips.forEach(tooltip => (tooltip.style.visibility = 'visible'));
+	}
 
+	hideTooltips() {
+		this.tooltips.forEach(tooltip => (tooltip.style.visibility = 'hidden'));
+	}
 	async updateDisplay() {
 		const response = await axios.get(`http://localhost:8000/wp-json/wp/v2/code_explainer/${this.id}`);
 		const data = response.data;

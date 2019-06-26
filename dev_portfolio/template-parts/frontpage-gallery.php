@@ -25,10 +25,14 @@
             {{highlight}}</li>
         </ul>
         <div class="projectGallery__projectLinks">
-          <a href="#" class="projectGallery__demoLink"><img
-              src="<?php echo get_template_directory_uri().'/images/new-tab.svg'; ?>" alt=""></a>
-          <a href="#" class="projectGallery__githubLink"><img
-              src="<?php echo get_template_directory_uri().'/images/github.svg'; ?>" alt=""></a>
+          <a href="#" class="projectGallery__demoLink">
+            <svg>
+              <use xlink:href="<?php echo get_template_directory_uri().'/images/symbol.svg#icon-new-tab'; ?>"></use>
+            </svg>
+          </a>
+          <a href="#" class="projectGallery__githubLink"><svg>
+              <use xlink:href="<?php echo get_template_directory_uri().'/images/symbol.svg#icon-github'; ?>"></use>
+            </svg> </a>
         </div>
       </div>
     </div>
