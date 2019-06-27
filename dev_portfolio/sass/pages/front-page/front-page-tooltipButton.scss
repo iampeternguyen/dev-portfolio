@@ -6,9 +6,21 @@
 	z-index: $zindexOverlay;
 	fill: $light;
 	cursor: pointer;
+	background-color: $dark;
+	border-radius: 50%;
+	height: 5rem;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all $fast;
+
+	&.active {
+		background-color: $blue;
+	}
 
 	svg {
-		height: 4rem;
-		width: 4rem;
+		height: 3rem;
+		width: 3rem;
 	}
 }

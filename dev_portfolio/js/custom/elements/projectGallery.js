@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					title: project.title.rendered,
 					summary: project.summary,
 					highlights: project.highlights.split(',').filter(el => {
-						el.trim();
-						return el != '';
+						return el.trim() != '';
 					}),
 					demo_link: project.demo_link,
 					github_link: project.github_link,

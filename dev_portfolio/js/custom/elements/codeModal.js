@@ -9,9 +9,8 @@ class CodeModal {
 		this.data = {};
 		this.id = null;
 
+		this.tooltipsButton = document.getElementsByClassName('tooltipButton')[0];
 		this.tooltips = Array.from(document.getElementsByClassName('code__tooltip'));
-		this.tooltipsVisible = true;
-		this.switchTooltips();
 
 		this.container = document.getElementsByClassName('codeModal__container')[0];
 		this.closeButton = document.getElementsByClassName('codeModal__closeButton')[0];
@@ -48,10 +47,12 @@ class CodeModal {
 	}
 	switchTooltips() {
 		if (this.tooltipsVisible) {
-			this.tooltips.forEach(tooltip => (tooltip.style.visibility = 'hidden'));
+			this.tooltips.forEach(tooltip => tooltip.classList.remove('active'));
+			this.tooltipsButton.classList.remove('active');
 			this.tooltipsVisible = false;
 		} else {
-			this.tooltips.forEach(tooltip => (tooltip.style.visibility = 'visible'));
+			this.tooltips.forEach(tooltip => tooltip.classList.add('active'));
+			this.tooltipsButton.classList.add('active');
 			this.tooltipsVisible = true;
 		}
 	}
