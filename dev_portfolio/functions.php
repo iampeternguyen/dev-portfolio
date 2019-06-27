@@ -188,6 +188,22 @@ function custom_post_types()
         'supports' => array('title', 'editor', 'excerpt'),
         'show_in_rest' => true,
         ));
+
+    register_post_type('project', array(
+            'labels' => array(
+                'name' => 'Projects',
+                'add_new_item' => 'Add New Project',
+                'edit_item' => 'Edit Project',
+                'all_items' => 'All Projects',
+                'singular_name' => 'Project',
+            ),
+            'public' => true,
+            'menu_icon' => 'dashicons-tablet',
+            'has_archive' => 'true',
+            'rewrite' => array('slug' => 'projects'),
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'show_in_rest' => true,
+            ));
 }
 
 add_action('init', 'custom_post_types');
@@ -208,6 +224,36 @@ function custom_rest_fields()
     register_rest_field('code_explainer', 'js_gist', array(
         'get_callback' => function () {
             return get_field('js_gist');
+        },
+    ));
+
+    register_rest_field('project', 'summary', array(
+        'get_callback' => function () {
+            return get_field('summary');
+        },
+    ));
+
+    register_rest_field('project', 'highlights', array(
+        'get_callback' => function () {
+            return get_field('highlights');
+        },
+    ));
+
+    register_rest_field('project', 'demo_link', array(
+        'get_callback' => function () {
+            return get_field('demo_link');
+        },
+    ));
+
+    register_rest_field('project', 'github_link', array(
+        'get_callback' => function () {
+            return get_field('github_link');
+        },
+    ));
+
+    register_rest_field('project', 'featured_image', array(
+        'get_callback' => function () {
+            return get_the_post_thumbnail_url();
         },
     ));
 }

@@ -3,44 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		el: '#projectGallery__projects',
 		// define data - initial display text
 		data: {
-			projects: [
-				{
-					id: '1',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-				{
-					id: '2',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-				{
-					id: '3',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-				{
-					id: '4',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-				{
-					id: '5',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-				{
-					id: '6',
-					title: 'Project 1',
-					summary: 'This is project 1. It was made with...',
-					highlights: ['Uses nodejs', 'built in vanilla js', 'scss infused'],
-				},
-			],
+			responseData: [],
+		},
+		computed: {
+			projects: function() {
+				if (this.responseData.length !== 0) {
+					console.log(this.responseData);
+					const processed = this.responseData.map(project => this.filterProjectData(project));
+					console.log(processed);
+					return processed;
+				}
+			},
 		},
 		methods: {
 			showBack: function(id) {
@@ -49,6 +22,24 @@ document.addEventListener('DOMContentLoaded', function() {
 			hideBack: function(id) {
 				document.getElementById(id).classList.remove('show');
 			},
+			filterProjectData: function(project) {
+				return {
+					title: project.title.rendered,
+					summary: project.summary,
+					highlights: project.highlights.split(',').filter(el => {
+						el.trim();
+						return el != '';
+					}),
+					demo_link: project.demo_link,
+					github_link: project.github_link,
+					image: project.featured_image,
+				};
+			},
+		},
+
+		async mounted() {
+			const response = await axios.get('http://localhost:8000/wp-json/wp/v2/project/');
+			this.responseData = response.data;
 		},
 	});
 });
