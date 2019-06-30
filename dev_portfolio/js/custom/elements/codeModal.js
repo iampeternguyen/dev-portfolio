@@ -8,8 +8,9 @@ class CodeModal {
 		this.modal = document.getElementsByClassName('codeModal')[0];
 		this.data = {};
 		this.id = null;
-
-		this.tooltipsButton = document.getElementsByClassName('tooltipButton')[0];
+		this.tooltipsButtonContainer = document.getElementsByClassName('tooltipButton__container')[0];
+		this.tooltipsButton = document.getElementsByClassName('tooltipButton__button')[0];
+		this.tooltipsButtonTooltip = document.getElementsByClassName('tooltipButton__tooltip')[0];
 		this.tooltips = Array.from(document.getElementsByClassName('code__tooltip'));
 
 		this.container = document.getElementsByClassName('codeModal__container')[0];
@@ -21,6 +22,17 @@ class CodeModal {
 		this.htmlLink = document.getElementsByClassName('codeModal__htmlLink')[0];
 		this.cssLink = document.getElementsByClassName('codeModal__cssLink')[0];
 		this.jsLink = document.getElementsByClassName('codeModal__jsLink')[0];
+	}
+
+	showTooltipsButton() {
+		this.tooltipsButtonContainer.style.visibility = 'visible';
+		this.tooltipsButton.classList.add('visible');
+		this.tooltipsButtonTooltip.classList.add('visible');
+	}
+
+	closeTooltipsButtonTooltip() {
+		this.tooltipsButtonTooltip.classList.remove('visible');
+		this.tooltipsButtonTooltip.classList.add('close');
 	}
 	setUpEventListners() {
 		this.modal.addEventListener('click', e => {
@@ -110,3 +122,6 @@ class CodeModal {
 }
 
 const codeModal = new CodeModal();
+setTimeout(() => {
+	codeModal.showTooltipsButton();
+}, 500);

@@ -1,26 +1,50 @@
 .tooltipButton {
-	position: fixed;
-	top: 5%;
-	right: 7%;
-
-	z-index: $zindexOverlay;
-	fill: $light;
-	cursor: pointer;
-	background-color: $dark;
-	border-radius: 50%;
-	height: 5rem;
-	width: 5rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all $fast;
-
-	&.active {
-		background-color: $blue;
+	&__container {
+		position: fixed;
+		top: 5%;
+		right: 7%;
+		z-index: $zindexOverlay;
+		display: flex;
+		visibility: hidden;
 	}
 
-	svg {
-		height: 3rem;
-		width: 3rem;
+	&__button {
+		fill: $light;
+		cursor: pointer;
+		background-color: $dark;
+		border-radius: 50%;
+		height: 5rem;
+		width: 5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all $fast;
+		&.active {
+			background-color: $blue;
+		}
+		svg {
+			height: 3rem;
+			width: 3rem;
+		}
+	}
+
+	&__tooltip {
+		margin-right: 2rem;
+
+		&.close {
+			display: none;
+		}
+	}
+
+	&__button,
+	&__tooltip {
+		visibility: hidden;
+		opacity: 0;
+		transition: all $fast;
+
+		&.visible {
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 }

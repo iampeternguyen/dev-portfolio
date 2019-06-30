@@ -14,6 +14,7 @@
 		const elements = Array.from(splashScreenBackground.children);
 		elements.push(image, splashScreenBackground, splashScreen);
 		elements.forEach(element => element.classList.add('close'));
+		codeModal.closeTooltipsButtonTooltip();
 
 		setTimeout(() => {
 			splashScreen.style.display = 'none';
