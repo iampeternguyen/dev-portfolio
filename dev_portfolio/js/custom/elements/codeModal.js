@@ -67,6 +67,7 @@ class CodeModal {
 		});
 	}
 	switchTooltips() {
+		this.closeTooltipsButtonTooltip();
 		if (this.tooltipsVisible) {
 			this.tooltips.forEach(tooltip => tooltip.classList.remove('active'));
 			this.tooltipsButton.classList.remove('active');

@@ -1,11 +1,17 @@
 .tooltipButton {
 	&__container {
 		position: fixed;
-		top: 5%;
-		right: 7%;
+		top: 5rem;
+		right: 10rem;
 		z-index: $zindexOverlay;
 		display: flex;
 		visibility: hidden;
+	}
+
+	&__codeTooltip {
+		position: fixed;
+		top: 12rem;
+		right: 4.8rem;
 	}
 
 	&__button {
@@ -14,6 +20,8 @@
 		background-color: $dark;
 		border-radius: 50%;
 		height: 5rem;
+		min-height: 5rem;
+		min-width: 5rem;
 		width: 5rem;
 		display: flex;
 		justify-content: center;
