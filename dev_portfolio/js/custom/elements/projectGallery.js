@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			projects: function() {
 				if (this.responseData.length !== 0) {
 					const processed = this.responseData.map(project => this.filterProjectData(project));
+					console.log(processed);
 					return processed;
 				}
 			},
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			},
 			filterProjectData: function(project) {
 				return {
+					id: project.id,
 					title: project.title.rendered,
 					summary: project.summary,
 					highlights: project.highlights.split(',').filter(el => {
