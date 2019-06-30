@@ -1,13 +1,24 @@
 .contact {
-	height: 100vh;
-	background-color: $dark;
-	color: $light;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	&__section {
+		height: 100vh;
+		background-color: $dark;
+	}
+
+	&__container {
+		height: 100%;
+		color: $light;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__header {
+		font-size: 7rem;
+	}
 
 	&__message {
+		font-size: 3rem;
 		display: flex;
 		align-items: center;
 	}

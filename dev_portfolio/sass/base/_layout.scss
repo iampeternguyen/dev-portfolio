@@ -9,15 +9,14 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; // 1 rem = 1 px;
-	background-color: $light;
 }
 
 body {
+	background-color: $light;
 }
 
 .container {
 	max-width: 150rem;
 	width: 90vw;
 	margin: 0 auto;
-	min-height: 100vh;
 }

@@ -1,6 +1,4 @@
 .projectGallery {
-	padding: 7rem 5rem;
-
 	&__projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -12,6 +10,7 @@
 		box-shadow: 0 2rem 2rem rgba($dark, 0.2);
 		padding: 1rem 1rem;
 		min-height: 45rem;
+		max-width: 50rem;
 		border-radius: 1rem;
 		overflow: hidden;
 

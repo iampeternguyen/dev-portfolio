@@ -1,4 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
 <section class="splashScreen" id="splashScreen">
   <div class="splashScreen__background">
     <div class="splashScreen__tooltip  tooltip down small bottom margin">Click to meet me</div>
