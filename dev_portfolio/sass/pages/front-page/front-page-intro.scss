@@ -8,8 +8,8 @@
 
 	&__container {
 		height: 100%;
-		display: grid;
-		align-content: center;
+		display: flex;
+		align-items: center;
 		padding: 0 5rem;
 		position: relative;
 	}
@@ -17,11 +17,16 @@
 	&__header {
 		font-size: 10rem;
 		font-weight: 700;
+		@include manageStylesFor(large) {
+			font-size: 8rem;
+		}
+
+		@include manageStylesFor(small) {
+			font-size: 4rem;
+		}
 	}
 
 	&__tooltip {
-		position: absolute;
-		top: 50%;
-		left: 100%;
+		margin-left: 3rem;
 	}
 }

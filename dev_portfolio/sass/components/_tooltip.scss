@@ -178,5 +178,8 @@ $borderWidth: 1rem;
 	&.active {
 		opacity: 1;
 		visibility: visible;
+		@include manageStylesFor(medium) {
+			display: none !important;
+		}
 	}
 }

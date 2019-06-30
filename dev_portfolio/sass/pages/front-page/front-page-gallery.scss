@@ -5,11 +5,11 @@
 
 	&__container {
 		position: relative;
+		display: flex;
+		align-items: center;
 	}
 
 	&__tooltip {
-		position: absolute;
-		top: 50%;
-		left: 100%;
+		margin-left: 3rem;
 	}
 }

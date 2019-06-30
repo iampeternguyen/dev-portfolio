@@ -9,6 +9,9 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; // 1 rem = 1 px;
+	@include manageStylesFor(large) {
+		font-size: 50%;
+	}
 }
 
 body {

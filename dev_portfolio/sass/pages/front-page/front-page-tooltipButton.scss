@@ -6,6 +6,10 @@
 		z-index: $zindexOverlay;
 		display: flex;
 		visibility: hidden;
+
+		@include manageStylesFor(medium) {
+			display: none;
+		}
 	}
 
 	&__codeTooltip {

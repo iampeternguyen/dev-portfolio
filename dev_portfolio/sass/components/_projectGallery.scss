@@ -1,16 +1,15 @@
 .projectGallery {
 	&__projects {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 		grid-column-gap: 2.5rem;
-		grid-row-gap: 3rem;
+		grid-row-gap: 2vw;
 	}
 	&__project {
 		position: relative;
 		box-shadow: 0 2rem 2rem rgba($dark, 0.2);
 		padding: 1rem 1rem;
 		min-height: 45rem;
-		max-width: 50rem;
 		border-radius: 1rem;
 		overflow: hidden;
 

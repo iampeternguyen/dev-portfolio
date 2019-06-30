@@ -15,12 +15,19 @@
 
 	&__header {
 		font-size: 7rem;
+		text-align: center;
+		@include manageStylesFor(small) {
+			font-size: 5rem;
+		}
 	}
 
 	&__message {
 		font-size: 3rem;
 		display: flex;
 		align-items: center;
+		@include manageStylesFor(small) {
+			flex-direction: column;
+		}
 	}
 
 	&__email {
@@ -30,6 +37,9 @@
 		background-color: $light;
 		border-radius: 2rem;
 		transition: all $fast;
+		@include manageStylesFor(small) {
+			margin-top: 1rem;
+		}
 
 		&:hover {
 			background-color: $red;

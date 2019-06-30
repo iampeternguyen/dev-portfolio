@@ -47,14 +47,21 @@
 		background-color: $light;
 		color: $dark;
 		display: grid;
-		grid-template-columns: 30% 65%;
+		grid-template-columns: 40% 55%;
 		grid-column-gap: 5%;
+		@include manageStylesFor(largest) {
+			display: flex;
+			flex-direction: column;
+			overflow: auto;
+		}
 	}
 
 	&__code {
 		color: $light;
 		height: 100%;
-
+		@include manageStylesFor(largest) {
+			overflow: visible;
+		}
 		&Nav {
 			background-color: $light;
 			ul {
@@ -97,5 +104,13 @@
 
 	&__description {
 		overflow: auto;
+
+		@include manageStylesFor(largest) {
+			overflow: visible;
+		}
+	}
+
+	@include manageStylesFor(medium) {
+		display: none !important;
 	}
 }

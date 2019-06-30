@@ -2,4 +2,8 @@
 	text-align: center;
 	background-color: $dark;
 	color: $light;
+
+	@include manageStylesFor(small) {
+		padding: 1rem 2rem;
+	}
 }

@@ -4,3 +4,41 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+@mixin manageStylesFor($breakpoint) {
+	// 1200px
+
+	@if $breakpoint == largest {
+		@media only screen and (max-width: 75em) {
+			@content;
+		}
+	}
+
+	// 1000px;
+	@if $breakpoint == large {
+		@media only screen and (max-width: 62.5em) {
+			@content;
+		}
+	}
+
+	// 800px;
+	@if $breakpoint == medium {
+		@media only screen and (max-width: 50em) {
+			@content;
+		}
+	}
+
+	// 600px;
+	@if $breakpoint == small {
+		@media only screen and (max-width: 37.5em) {
+			@content;
+		}
+	}
+
+	// 500px;
+	@if $breakpoint == smallest {
+		@media only screen and (max-width: 31.25em) {
+			@content;
+		}
+	}
+}
