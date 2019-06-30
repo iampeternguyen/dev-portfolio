@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		computed: {
 			projects: function() {
 				if (this.responseData.length !== 0) {
-					console.log(this.responseData);
 					const processed = this.responseData.map(project => this.filterProjectData(project));
-					console.log(processed);
 					return processed;
 				}
 			},
@@ -42,7 +40,3 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 	});
 });
-
-function testClick(id) {
-	console.log(id);
-}

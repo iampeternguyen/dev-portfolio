@@ -11,6 +11,17 @@
 	justify-content: center;
 	align-items: center;
 
+	h3 {
+		margin-bottom: 2.3rem;
+	}
+	p {
+		margin-bottom: 1.5rem;
+	}
+
+	&__text {
+		padding-right: 3rem;
+	}
+
 	// default to hidden
 	opacity: 0;
 	display: none;
@@ -60,7 +71,7 @@
 				border-bottom: 1px solid transparent;
 				border-top-right-radius: 1rem;
 				border-top-left-radius: 1rem;
-
+				cursor: pointer;
 				text-align: center;
 
 				transition: all $fast;
@@ -85,5 +96,6 @@
 	}
 
 	&__description {
+		overflow: auto;
 	}
 }

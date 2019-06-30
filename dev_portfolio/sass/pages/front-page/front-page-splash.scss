@@ -122,6 +122,12 @@
 			opacity: 0;
 		}
 	}
+
+	&__backgroundCodeTooltip {
+		position: absolute;
+		top: 20rem;
+		left: 20rem;
+	}
 }
 
 @keyframes moveUpAndDown {

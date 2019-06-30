@@ -1,5 +1,8 @@
 <section class="splashScreen" id="splashScreen">
   <div class="splashScreen__background">
+    <div class="code__tooltip splashScreen__backgroundCodeTooltip tooltip left blue " onClick="codeModal.show(1825)">Dig
+      deeper into the background
+    </div>
     <div class="splashScreen__tooltip  tooltip down small bottom margin">Click to meet me</div>
 
     <div class="splashScreen__circle">
