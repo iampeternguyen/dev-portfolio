@@ -6,10 +6,10 @@
       voluptates magnam architecto recusandae. Totam reprehenderit magnam repellat ipsam quam dolore quisquam quod esse
       animi eaque! Necessitatibus consequatur at cumque tempora? Beatae voluptate quam ipsam commodi eius earum at.
       Asperiores ipsa maxime dignissimos nobis quas blanditiis ducimus praesentium animi.</p>
-    <p class="intro__pargraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti dolorum eum
+    <p class="intro__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti dolorum eum
       eligendi laboriosam inventore ullam iste voluptatem numquam asperiores blanditiis excepturi et, hic vitae? Ea quis
       voluptate sapiente facere ipsa dolorem placeat consequatur vel iste blanditiis unde architecto, asperiores
       veritatis? Dignissimos, fuga sit nobis soluta enim provident distinctio non?</p>
-    <div class="code__tooltip intro__tooltip tooltip left blue" onClick="codeModal.show(1807)">Dig Deeper</div>
+    <div class="code__tooltip intro__tooltip tooltip left blue" onClick="codeModal.show(1807)">CSS Philosophy</div>
   </div>
 </div>

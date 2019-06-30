@@ -69,11 +69,19 @@ class CodeModal {
 	switchTooltips() {
 		this.closeTooltipsButtonTooltip();
 		if (this.tooltipsVisible) {
-			this.tooltips.forEach(tooltip => tooltip.classList.remove('active'));
+			this.tooltips.forEach(tooltip => {
+				tooltip.classList.remove('active');
+				setTimeout(() => {
+					tooltip.style.display = 'none';
+				}, 300);
+			});
 			this.tooltipsButton.classList.remove('active');
 			this.tooltipsVisible = false;
 		} else {
-			this.tooltips.forEach(tooltip => tooltip.classList.add('active'));
+			this.tooltips.forEach(tooltip => {
+				tooltip.style.display = 'block';
+				tooltip.classList.add('active');
+			});
 			this.tooltipsButton.classList.add('active');
 			this.tooltipsVisible = true;
 		}

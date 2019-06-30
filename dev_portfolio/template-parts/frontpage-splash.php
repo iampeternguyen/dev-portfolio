@@ -9,6 +9,8 @@
       <img src="<?php echo get_template_directory_uri().'/images/peter-head.svg'; ?>" alt="Peter Chibi"
         class="splashScreen__image" />
     </div>
+    <div class="code__tooltip splashScreen__circleTooltip tooltip up blue" onClick="codeModal.show(1830)">Character Logo
+    </div>
 
     <div class="splashScreen__text">
       <span class="splashScreen__text-1">Curious</span>

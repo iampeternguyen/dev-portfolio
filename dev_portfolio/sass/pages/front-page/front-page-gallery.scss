@@ -2,4 +2,14 @@
 	&__section {
 		padding-bottom: 10rem;
 	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__tooltip {
+		position: absolute;
+		top: 50%;
+		left: 100%;
+	}
 }
