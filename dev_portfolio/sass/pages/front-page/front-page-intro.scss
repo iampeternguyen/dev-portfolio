@@ -4,6 +4,17 @@
 		height: 90vh;
 		background-color: $dark;
 		color: $light;
+
+		a:link,
+		a:visited {
+			color: $light;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		a:hover {
+			color: $red;
+		}
 	}
 
 	&__container {
