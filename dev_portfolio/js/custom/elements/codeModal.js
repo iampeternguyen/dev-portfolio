@@ -88,22 +88,38 @@ class CodeModal {
 	}
 
 	async updateDisplay() {
-		this.resetCodeDisplay();
-		const response = await axios.get(`http://localhost:8000/wp-json/wp/v2/code_explainer/${this.id}`);
-		this.data = response.data;
-		this.title.innerHTML = this.data.title.rendered;
-		this.text.innerHTML = this.data.content.rendered;
-		postscribe(this.htmlCode, this.data.html_gist);
-		postscribe(this.cssCode, this.data.css_gist);
-		postscribe(this.jsCode, this.data.js_gist);
-		postscribe(this.phpCode, this.data.php_gist);
-		this.hideCodeLinks();
-		this.showLinks();
+		try {
+			const response = await axios.get(`http://meetpeter.us/wp-json/wp/v2/code_explainer/${this.id}`);
+			this.data = response.data;
+			this.title.innerHTML = this.data.title.rendered;
+			this.text.innerHTML = this.data.content.rendered;
+			if (this.data.html_gist) {
+				postscribe(this.htmlCode, this.make_script(this.data.html_gist));
+			}
+			if (this.data.css_gist) {
+				postscribe(this.cssCode, this.make_script(this.data.css_gist));
+			}
+			if (this.data.js_gist) {
+				postscribe(this.jsCode, this.make_script(this.data.js_gist));
+			}
+			if (this.data.php_gist) {
+				postscribe(this.phpCode, this.make_script(this.data.php_gist));
+			}
+			this.hideCodeLinks();
+			this.showLinks();
+		} catch (error) {
+			this.text.innerHTML = 'Code Explainer not found';
+		}
+	}
+
+	make_script(url) {
+		return `<script src="${url + '.js'}"></script>`;
 	}
 
 	show(id) {
 		if (this.id !== id) {
 			this.id = id;
+			this.resetCodeDisplay();
 			this.updateDisplay();
 		}
 		this.modal.classList.remove('close');
@@ -125,6 +141,8 @@ class CodeModal {
 		this.jsCode.innerHTML = '';
 		this.cssCode.innerHTML = '';
 		this.phpCode.innerHTML = '';
+		this.title.innerHTML = '';
+		this.text.innerHTML = '';
 		this.deactivateLinks();
 		this.hideCodeBlocks();
 		this.hideCodeLinks();

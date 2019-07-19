@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			projects: function() {
 				if (this.responseData.length !== 0) {
 					const processed = this.responseData.map(project => this.filterProjectData(project));
-					console.log(processed);
 					return processed;
 				}
 			},
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 
 		async mounted() {
-			const response = await axios.get('http://localhost:8000/wp-json/wp/v2/project/');
+			const response = await axios.get('http://meetpeter.us/wp-json/wp/v2/project/');
 			this.responseData = response.data;
 		},
 	});

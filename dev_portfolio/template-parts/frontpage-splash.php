@@ -1,7 +1,7 @@
-<section class="splashScreen" id="splashScreen">
+<div class="splashScreen" id="splashScreen">
   <div class="splashScreen__background">
-    <div class="code__tooltip splashScreen__backgroundCodeTooltip tooltip left blue " onClick="codeModal.show(1825)">Dig
-      deeper into the background
+    <div class="code__tooltip splashScreen__backgroundCodeTooltip tooltip left blue " onClick="codeModal.show(21)">The
+      background
     </div>
     <div class="splashScreen__tooltip  tooltip down small bottom margin">Click to meet me</div>
 
@@ -17,7 +17,5 @@
       <span class="splashScreen__text-2">Full Stack</span>
       <span class="splashScreen__text-3">Developer</span>
     </div>
-
   </div>
-
-</section>
+</div>
