@@ -1,7 +1,8 @@
 <div id="projectGallery__projects" class="projectGallery__projects">
   <div class="projectGallery__project" v-for="(project,index) in projects" key="index">
     <div class="projectGallery__projectFront">
-      <img class="projectGallery__projectImage margin bottom tiny" :src="project.image" alt="project image">
+      <img class="projectGallery__projectImage margin bottom tiny" :src="project.image" alt="project image"
+        v-if="project.image">
       <div class="projectGallery__projectTitleContainer margin bottom small">
         <h3 class="projectGallery__projectTitle">{{project.title}}</h3>
         <div class="projectGallery__projectMenu" @click="showBack('projectBack'+project.id)">
@@ -15,7 +16,8 @@
     <div class="projectGallery__projectBack" :id="'projectBack'+project.id">
       <div class="projectGallery__projectCloseButton closeButton" @click="hideBack('projectBack'+project.id)"></div>
 
-      <h3 class="projectGallery__projectHighlights margin bottom medium">Highlights</h3>
+      <h3 class="projectGallery__projectHighlights margin bottom medium" v-if="project.highlights.length > 0">Highlights
+      </h3>
       <ul class="projectGallery__projectHighlightsList">
         <li class="projectGallery__projectHighlightsItem" v-for="(highlight, index) in project.highlights" key="index">
           {{highlight}}</li>

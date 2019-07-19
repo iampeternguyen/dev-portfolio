@@ -1,6 +1,11 @@
 .projectGallery {
 	&__section {
 		padding-bottom: 10rem;
+
+		a:link,
+		a:visited {
+			text-decoration: none;
+		}
 	}
 
 	&__container {
