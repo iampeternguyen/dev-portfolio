@@ -227,6 +227,12 @@ function custom_rest_fields()
         },
     ));
 
+    register_rest_field('code_explainer', 'php_gist', array(
+        'get_callback' => function () {
+            return get_field('php_gist');
+        },
+    ));
+
     register_rest_field('project', 'summary', array(
         'get_callback' => function () {
             return get_field('summary');

@@ -164,6 +164,7 @@ class CodeModal {
 		});
 	}
 	showLinks() {
+		console.log(this.data.php_gist);
 		if (this.data.php_gist) {
 			this.phpLink.style.display = 'list-item';
 			this.showPhp();

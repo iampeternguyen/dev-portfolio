@@ -10,6 +10,6 @@
 
 
   </div>
-  <div class="code__tooltip tooltipButton__codeTooltip tooltip up blue" onClick="codeModal.show(1829)">The Code Modal
+  <div class="code__tooltip tooltipButton__codeTooltip tooltip up blue" onClick="codeModal.show(28)">The Code Modal
   </div>
 </div>

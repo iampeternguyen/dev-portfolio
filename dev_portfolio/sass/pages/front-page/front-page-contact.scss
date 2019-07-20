@@ -43,20 +43,19 @@
 
 		&:hover {
 			background-color: $red;
+			color: $light;
+
 			transform: translateY(-0.3rem);
 		}
 
 		&:active {
 			transform: translateY(0rem);
 		}
+
 		a:link,
 		a:visited {
 			text-decoration: none;
 			color: $dark;
-		}
-
-		a:hover {
-			color: $light;
 		}
 
 		&Tooltip {
